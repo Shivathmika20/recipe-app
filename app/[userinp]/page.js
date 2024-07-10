@@ -19,13 +19,6 @@ const getData=async()=>{
     const info=data.meals[0];
     return info;
   
- 
-  // if (data.meals && Array.isArray(data.meals) && data.meals.length > 0) {
-  //   const info = data.meals[0];
-    
-  //   return info;
-  // }
-  
 }
  const mealdata=await getData();
 
