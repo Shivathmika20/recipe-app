@@ -17,17 +17,6 @@ const getData=async()=>{
 }
  const mealdata=await getData();
 
-//  if (!mealdata) {
-//   return (
-//       <div className='flex flex-col justify-center items-center my-16 '>
-//           <h1 className='text-xl font-bold sm:2xl md:text-3xl text-center'>
-//               Meal not found
-//           </h1>
-         
-//       </div>
-//   );
-// }
-
  let c=1;
  const a=[];
  for(const i in mealdata){
@@ -38,11 +27,8 @@ const getData=async()=>{
     c=c+1;
   }
  }
-//  console.log(a);  
-
-
-
  
+
   return (
   (mealdata!==null )?
   (
