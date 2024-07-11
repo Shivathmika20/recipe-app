@@ -39,7 +39,7 @@ const getData=async()=>{
  
   return (
 
-    <div className='flex flex-col justify-center items-center my-16 mx-16 space-y-3 '>
+    <div className='flex flex-col justify-center items-center my-16 mx-10  '>
        <div className='text-center'>
        <h1 className='text-xl font-bold sm:2xl md:text-3xl'>{mealdata.strMeal}</h1>
        <h4 className='text-lg sm:xl '>{mealdata.strArea}</h4>
@@ -64,7 +64,7 @@ const getData=async()=>{
           <h1 className='text-xl font-bold sm:text-2xl md:text-3xl text-center'>
               Procedure
             </h1>
-           <p className='whitespace-pre-wrap px-1 max-w-4xl '>
+           <p className='whitespace-pre-wrap md:max-w-4xl '>
               {mealdata.strInstructions}
           </p> 
        </div>
