@@ -8,19 +8,25 @@ const inp=params.userinp;
 
 const getData=async()=>{
  
+    
     const res=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inp}`)
     const data=await res.json();
     console.log(data.meals);
-    // if (data.meals === null) {
-    //   console.log("Dish Not Found");
-    //   return "Dish Not Found"; // Handle this in your UI
-    // }
-   
-    const info=data.meals[0];
-    return info;
-  
+    return data.meals ? data.meals[0] : null;
+ 
 }
  const mealdata=await getData();
+
+//  if (!mealdata) {
+//   return (
+//       <div className='flex flex-col justify-center items-center my-16 '>
+//           <h1 className='text-xl font-bold sm:2xl md:text-3xl text-center'>
+//               Meal not found
+//           </h1>
+         
+//       </div>
+//   );
+// }
 
  let c=1;
  const a=[];
@@ -38,9 +44,10 @@ const getData=async()=>{
 
  
   return (
-
+  (mealdata!==null )?
+  (
     <div className='flex flex-col justify-center items-center my-16 mx-10  '>
-       <div className='text-center'>
+       <div className='text-center pb-4'>
        <h1 className='text-xl font-bold sm:2xl md:text-3xl'>{mealdata.strMeal}</h1>
        <h4 className='text-lg sm:xl '>{mealdata.strArea}</h4>
        </div>
@@ -69,6 +76,15 @@ const getData=async()=>{
           </p> 
        </div>
     </div>
+  ):
+  (
+    <div className='flex flex-col justify-center items-center my-16 '>
+        <h1 className='text-xl font-bold sm:2xl md:text-3xl text-center'>
+            Meal not found
+        </h1>
+       
+    </div>
+  )
   )
 }
 
